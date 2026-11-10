@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4ee">
+  <meta name="description" content="Revierhobel – Hausmeisterservice und Montageservice aus Duisburg. Zuverlässige Unterstützung rund um Haus, Wohnung und Montage.">
+  <title>Revierhobel – Hausmeisterservice &amp; Montageservice</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #202820;
+      --muted: #647064;
+      --paper: #f6f4ee;
+      --white: #fffefa;
+      --green: #2f4934;
+      --green-dark: #233829;
+      --lime: #d3e56e;
+      --line: #e4e3d9;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Segoe UI', Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); line-height: 1.6; }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+    .topbar { height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 800; letter-spacing: -.04em; font-size: 1.25rem; }
+    .brand-mark { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--green); color: var(--lime); font-family: var(--serif); font-size: 1.35rem; }
+    nav { display: flex; align-items: center; gap: 32px; }
+    nav a { text-decoration: none; color: #485348; font-size: .92rem; font-weight: 600; }
+    nav a:hover, nav a:focus-visible { color: var(--green); text-decoration: underline; text-underline-offset: 5px; }
+    .nav-cta, .button { display: inline-flex; justify-content: center; align-items: center; gap: 10px; min-height: 48px; padding: 0 20px; border: 0; border-radius: 4px; background: var(--green); color: white; text-decoration: none; font: 700 .92rem var(--sans); transition: background .2s, transform .2s; cursor: pointer; }
+    .nav-cta:hover, .button:hover { background: var(--green-dark); transform: translateY(-1px); }
+    .menu-toggle { display: none; border: 1px solid var(--line); background: transparent; padding: 9px 12px; border-radius: 4px; color: var(--ink); font: 700 .9rem var(--sans); }
+    .hero { padding: 68px 0 82px; }
+    .hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; gap: 56px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 20px; color: var(--green); font-size: .76rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    .eyebrow::before { content: ''; width: 28px; height: 2px; background: #91a23d; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 650px; margin-bottom: 22px; font: 500 clamp(3rem, 6vw, 5.4rem)/.99 var(--serif); letter-spacing: -.055em; }
+    h1 em { color: var(--green); font-weight: 500; }
+    .hero-copy { max-width: 520px; margin-bottom: 30px; color: var(--muted); font-size: 1.08rem; }
+    .button .arrow { font-size: 1.15rem; line-height: 1; }
+    .hero-note { display: flex; align-items: center; gap: 10px; margin-top: 22px; color: #657064; font-size: .82rem; }
+    .hero-note span { display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: #e7ebd8; color: var(--green); font-weight: 800; }
+    .hero-art { position: relative; min-height: 435px; overflow: hidden; border-radius: 4px; background: #dce2d2; }
+    .hero-art::before { position: absolute; content: ''; inset: 0; background: linear-gradient(145deg, #e6eadc 0%, #cbd6c3 48%, #9dad91 100%); }
+    .sun { position: absolute; top: 54px; right: 56px; width: 88px; height: 88px; border-radius: 50%; background: #e5ecb2; opacity: .9; }
+    .hill { position: absolute; bottom: -90px; border-radius: 50% 50% 0 0; }
+    .hill-one { left: -15%; width: 90%; height: 250px; background: #748a6d; transform: rotate(-8deg); }
+    .hill-two { right: -17%; bottom: -115px; width: 90%; height: 295px; background: #4a674e; transform: rotate(9deg); }
+    .workshop { position: absolute; z-index: 1; left: 50%; bottom: 60px; width: 230px; height: 190px; transform: translateX(-50%); }
+    .shed { position: absolute; left: 18px; bottom: 0; width: 194px; height: 137px; background: #e9e5d7; border: 5px solid #53634e; border-bottom: 0; }
+    .roof { position: absolute; left: 0; top: 0; width: 0; height: 0; border-left: 115px solid transparent; border-right: 115px solid transparent; border-bottom: 80px solid #394d3c; }
+    .door { position: absolute; left: 77px; bottom: 0; width: 47px; height: 84px; background: #849077; border: 4px solid #53634e; }
+    .window { position: absolute; right: 22px; bottom: 69px; width: 36px; height: 34px; background: #b7c8b3; border: 4px solid #53634e; }
+    .window::after { content: ''; position: absolute; left: 50%; top: 0; height: 100%; border-left: 3px solid #53634e; }
+    .art-label { position: absolute; z-index: 2; left: 24px; top: 24px; padding: 8px 12px; background: rgba(255,254,250,.8); color: var(--green); font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .art-caption { position: absolute; z-index: 2; right: 20px; bottom: 18px; color: rgba(255,255,255,.92); font: italic 1rem var(--serif); }
+    .intro { padding: 30px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .intro-inner { display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .intro p { margin: 0; color: var(--muted); }
+    .intro strong { color: var(--ink); font: 500 1.25rem var(--serif); }
+    .intro-location { white-space: nowrap; color: var(--green); font-size: .88rem; font-weight: 700; }
+    section.content { padding: 100px 0; }
+    .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 36px; margin-bottom: 42px; }
+    .section-heading h2 { max-width: 590px; margin-bottom: 0; font: 500 clamp(2.4rem, 4vw, 3.8rem)/1.04 var(--serif); letter-spacing: -.045em; }
+    .section-heading > p { max-width: 330px; margin-bottom: 4px; color: var(--muted); }
+    .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .service-card { min-height: 270px; padding: 30px; border: 1px solid var(--line); background: var(--white); }
+    .service-number { display: flex; justify-content: space-between; align-items: center; margin-bottom: 34px; color: #859078; font: italic 1rem var(--serif); }
+    .service-icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: #edf0e3; color: var(--green); font-size: 1.15rem; }
+    .service-card h3 { margin-bottom: 10px; font: 500 1.75rem var(--serif); letter-spacing: -.025em; }
+    .service-card p { max-width: 450px; margin-bottom: 0; color: var(--muted); }
+    .promise { padding: 76px 0; background: var(--green); color: white; }
+    .promise-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 80px; align-items: start; }
+    .promise .eyebrow { color: var(--lime); }
+    .promise h2 { margin-bottom: 18px; font: 500 clamp(2.4rem, 4vw, 3.6rem)/1.05 var(--serif); letter-spacing: -.04em; }
+    .promise-intro { color: #d5ded2; }
+    .promise-list { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 32px; padding-top: 12px; }
+    .promise-item { border-top: 1px solid rgba(255,255,255,.25); padding-top: 14px; }
+    .promise-item strong { display: block; margin-bottom: 5px; color: var(--lime); font: 500 1.25rem var(--serif); }
+    .promise-item span { color: #d5ded2; font-size: .9rem; }
+    .contact { padding: 100px 0; }
+    .contact-box { display: grid; grid-template-columns: 1fr .8fr; gap: 60px; align-items: center; padding: 54px; background: #e9ecdf; }
+    .contact-box h2 { max-width: 520px; margin-bottom: 16px; font: 500 clamp(2.3rem, 4vw, 3.6rem)/1.04 var(--serif); letter-spacing: -.045em; }
+    .contact-box p { max-width: 470px; margin-bottom: 0; color: var(--muted); }
+    form { display: grid; gap: 12px; }
+    label { color: #485348; font-size: .82rem; font-weight: 700; }
+    input, textarea { width: 100%; margin-top: 5px; padding: 12px; border: 1px solid #cdd3c5; border-radius: 3px; background: var(--white); color: var(--ink); font: 1rem var(--sans); }
+    textarea { min-height: 96px; resize: vertical; }
+    form .button { justify-self: start; margin-top: 4px; }
+    .form-note { min-height: 1.3em; margin: 0; color: var(--muted); font-size: .78rem; }
+    footer { padding: 28px 0; border-top: 1px solid var(--line); }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; color: var(--muted); font-size: .83rem; }
+    .footer-inner p { margin: 0; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { text-decoration: none; }
+    .footer-links a:hover { text-decoration: underline; }
+    :focus-visible { outline: 3px solid #899a39; outline-offset: 3px; }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 36px, 560px); }
+      .topbar { height: 72px; }
+      .menu-toggle { display: inline-block; }
+      nav { display: none; position: absolute; z-index: 5; top: 64px; left: 18px; right: 18px; padding: 18px; flex-direction: column; align-items: stretch; gap: 16px; background: var(--white); border: 1px solid var(--line); box-shadow: 0 12px 30px #20282018; }
+      nav.open { display: flex; }
+      nav a { padding: 5px; }
+      .nav-cta { text-align: center; }
+      .hero { padding: 48px 0 56px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+      h1 { font-size: clamp(3.2rem, 14vw, 5rem); }
+      .hero-art { min-height: 330px; }
+      .workshop { transform: translateX(-50%) scale(.82); transform-origin: bottom center; }
+      .intro-inner { align-items: flex-start; flex-direction: column; gap: 12px; }
+      section.content, .contact { padding: 72px 0; }
+      .section-heading { display: block; margin-bottom: 28px; }
+      .section-heading > p { margin: 16px 0 0; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: 230px; }
+      .promise-grid { grid-template-columns: 1fr; gap: 30px; }
+      .promise-list { gap: 20px; }
+      .contact-box { grid-template-columns: 1fr; gap: 30px; padding: 30px 22px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="brand" href="#start" aria-label="Revierhobel – zur Startseite"><span class="brand-mark" aria-hidden="true">R</span><span>Revierhobel</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation">Menü</button>
+    <nav id="navigation" aria-label="Hauptnavigation">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#ueber-uns">Über uns</a>
+      <a class="nav-cta" href="#kontakt">Projekt besprechen <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="start">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Handwerk aus dem Revier</p>
+          <h1>Wir kümmern uns.<br><em>Mit Hand &amp; Herz.</em></h1>
+          <p class="hero-copy">Hausmeisterservice und Montageservice aus Duisburg – praktische Unterstützung rund um Haus, Wohnung und die Dinge, die einfach erledigt werden müssen.</p>
+          <a class="button" href="#kontakt">Lassen Sie uns sprechen <span class="arrow" aria-hidden="true">→</span></a>
+          <div class="hero-note"><span aria-hidden="true">✓</span> Persönlich, nah und zuverlässig</div>
+        </div>
+        <div class="hero-art" role="img" aria-label="Illustration eines kleinen Hauses in einer grünen Landschaft">
+          <span class="art-label">Duisburg &amp; Umgebung</span><span class="sun" aria-hidden="true"></span>
+          <div class="hill hill-one" aria-hidden="true"></div><div class="hill hill-two" aria-hidden="true"></div>
+          <div class="workshop" aria-hidden="true"><div class="roof"></div><div class="shed"></div><div class="door"></div><div class="window"></div></div>
+          <span class="art-caption">Gutes Handwerk. Gutes Gefühl.</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="intro"><div class="wrap intro-inner"><p><strong>Ein Ansprechpartner für viele Aufgaben.</strong><br>Damit Ihr Zuhause und Ihre Immobilie in Schuss bleiben.</p><span class="intro-location">Verwurzelt im Ruhrgebiet&nbsp; · &nbsp;Zuhause in Duisburg</span></div></div>
+
+    <section class="content" id="leistungen">
+      <div class="wrap">
+        <div class="section-heading"><div><p class="eyebrow">Was wir für Sie tun</p><h2>Praktische Hilfe.<br>Sauber erledigt.</h2></div><p>Ob regelmäßige Unterstützung oder ein konkretes Vorhaben: Gemeinsam finden wir die passende Lösung für Ihr Projekt.</p></div>
+        <div class="service-grid">
+          <article class="service-card"><div class="service-number"><span>01 / Haus &amp; Hof</span><span class="service-icon" aria-hidden="true">⌂</span></div><h3>Hausmeisterservice</h3><p>Unterstützung bei der Betreuung und Pflege Ihrer Immobilie – von Kontrollgängen und kleinen Handgriffen bis zur Pflege der Außenbereiche.</p></article>
+          <article class="service-card"><div class="service-number"><span>02 / Aufbau &amp; Montage</span><span class="service-icon" aria-hidden="true">⌁</span></div><h3>Montageservice</h3><p>Möbel aufbauen, Einrichtungsgegenstände montieren oder Dinge sicher anbringen: Wir packen mit an und sorgen für einen ordentlichen Abschluss.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="promise" id="ueber-uns">
+      <div class="wrap promise-grid">
+        <div><p class="eyebrow">Revierhobel – aus der Region</p><h2>Handwerk, auf das man sich verlassen kann.</h2><p class="promise-intro">Wir mögen es unkompliziert: Wir hören zu, sprechen klar ab, was zu tun ist, und kümmern uns um die vereinbarten Arbeiten.</p></div>
+        <div class="promise-list">
+          <div class="promise-item"><strong>Persönlich</strong><span>Direkter Kontakt und ein offenes Ohr für Ihr Anliegen.</span></div>
+          <div class="promise-item"><strong>Verlässlich</strong><span>Absprachen, die zählen – und ein sauberer Abschluss.</span></div>
+          <div class="promise-item"><strong>Vielseitig</strong><span>Hausmeisterservice und Montage aus einer Hand.</span></div>
+          <div class="promise-item"><strong>Aus dem Revier</strong><span>Lokal verwurzelt und für Sie in Duisburg da.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="kontakt">
+      <div class="wrap contact-box">
+        <div><p class="eyebrow">Der erste Schritt</p><h2>Was steht bei Ihnen an?</h2><p>Schildern Sie uns kurz Ihr Vorhaben. Wir melden uns, um die nächsten Schritte und den passenden Umfang mit Ihnen abzustimmen.</p></div>
+        <form id="contact-form">
+          <label for="name">Ihr Name<input id="name" name="name" autocomplete="name" required></label>
+          <label for="email">Ihre E-Mail-Adresse<input id="email" name="email" type="email" autocomplete="email" required></label>
+          <label for="message">Worum geht es?<textarea id="message" name="message" required></textarea></label>
+          <button class="button" type="submit">Anfrage vorbereiten <span aria-hidden="true">→</span></button>
+          <p class="form-note" id="form-note" aria-live="polite">Das Formular öffnet Ihr E-Mail-Programm.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap footer-inner"><a class="brand" href="#start"><span class="brand-mark" aria-hidden="true">R</span><span>Revierhobel</span></a><p>© <span id="year"></span> Revierhobel · Hausmeisterservice &amp; Montageservice · Duisburg</p><div class="footer-links"><a href="mailto:">Kontakt</a><a href="#impressum" id="imprint-link">Impressum</a></div></div></footer>
+
+  <script>
+    // Vor Veröffentlichung bitte Ihre Kontakt-E-Mail-Adresse hier eintragen.
+    const contactEmail = '';
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('#navigation');
+    toggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }));
+    document.querySelector('#year').textContent = new Date().getFullYear();
+    document.querySelector('#contact-form').addEventListener('submit', event => {
+      event.preventDefault();
+      const note = document.querySelector('#form-note');
+      if (!contactEmail) {
+        note.textContent = 'Bitte tragen Sie vor der Veröffentlichung Ihre E-Mail-Adresse im HTML-Code ein (contactEmail).';
+        return;
+      }
+      const data = new FormData(event.currentTarget);
+      const subject = encodeURIComponent('Anfrage über die Revierhobel-Homepage');
+      const body = encodeURIComponent(`Name: ${data.get('name')}\nE-Mail: ${data.get('email')}\n\n${data.get('message')}`);
+      window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
+    });
+    document.querySelector('#imprint-link').addEventListener('click', event => {
+      event.preventDefault();
+      document.querySelector('#form-note').textContent = 'Bitte ergänzen Sie vor Veröffentlichung die gesetzlich erforderlichen Angaben im Impressum.';
+      document.querySelector('#kontakt').scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
