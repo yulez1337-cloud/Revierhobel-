@@ -3,231 +3,58 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f6f4ee">
-  <meta name="description" content="Revierhobel – Hausmeisterservice und Montageservice aus Duisburg. Zuverlässige Unterstützung rund um Haus, Wohnung und Montage.">
-  <title>Revierhobel – Hausmeisterservice &amp; Montageservice</title>
+  <meta name="theme-color" content="#101b2c">
+  <meta name="description" content="Revierhobel aus Duisburg: Hausmeisterservice und Montageservice für Fenster, Türen, Markisen und Vordächer. Persönlich, zuverlässig und sauber montiert.">
+  <title>Revierhobel | Hausmeister- &amp; Montageservice aus Duisburg</title>
   <style>
-    :root {
-      color-scheme: light;
-      --ink: #202820;
-      --muted: #647064;
-      --paper: #f6f4ee;
-      --white: #fffefa;
-      --green: #2f4934;
-      --green-dark: #233829;
-      --lime: #d3e56e;
-      --line: #e4e3d9;
-      --serif: Georgia, 'Times New Roman', serif;
-      --sans: 'Segoe UI', Arial, sans-serif;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); line-height: 1.6; }
-    a { color: inherit; }
-    .wrap { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
-    .topbar { height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 800; letter-spacing: -.04em; font-size: 1.25rem; }
-    .brand-mark { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--green); color: var(--lime); font-family: var(--serif); font-size: 1.35rem; }
-    nav { display: flex; align-items: center; gap: 32px; }
-    nav a { text-decoration: none; color: #485348; font-size: .92rem; font-weight: 600; }
-    nav a:hover, nav a:focus-visible { color: var(--green); text-decoration: underline; text-underline-offset: 5px; }
-    .nav-cta, .button { display: inline-flex; justify-content: center; align-items: center; gap: 10px; min-height: 48px; padding: 0 20px; border: 0; border-radius: 4px; background: var(--green); color: white; text-decoration: none; font: 700 .92rem var(--sans); transition: background .2s, transform .2s; cursor: pointer; }
-    .nav-cta:hover, .button:hover { background: var(--green-dark); transform: translateY(-1px); }
-    .menu-toggle { display: none; border: 1px solid var(--line); background: transparent; padding: 9px 12px; border-radius: 4px; color: var(--ink); font: 700 .9rem var(--sans); }
-    .hero { padding: 68px 0 82px; }
-    .hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; gap: 56px; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 20px; color: var(--green); font-size: .76rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
-    .eyebrow::before { content: ''; width: 28px; height: 2px; background: #91a23d; }
-    h1, h2, h3, p { margin-top: 0; }
-    h1 { max-width: 650px; margin-bottom: 22px; font: 500 clamp(3rem, 6vw, 5.4rem)/.99 var(--serif); letter-spacing: -.055em; }
-    h1 em { color: var(--green); font-weight: 500; }
-    .hero-copy { max-width: 520px; margin-bottom: 30px; color: var(--muted); font-size: 1.08rem; }
-    .button .arrow { font-size: 1.15rem; line-height: 1; }
-    .hero-note { display: flex; align-items: center; gap: 10px; margin-top: 22px; color: #657064; font-size: .82rem; }
-    .hero-note span { display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: #e7ebd8; color: var(--green); font-weight: 800; }
-    .hero-art { position: relative; min-height: 435px; overflow: hidden; border-radius: 4px; background: #dce2d2; }
-    .hero-art::before { position: absolute; content: ''; inset: 0; background: linear-gradient(145deg, #e6eadc 0%, #cbd6c3 48%, #9dad91 100%); }
-    .sun { position: absolute; top: 54px; right: 56px; width: 88px; height: 88px; border-radius: 50%; background: #e5ecb2; opacity: .9; }
-    .hill { position: absolute; bottom: -90px; border-radius: 50% 50% 0 0; }
-    .hill-one { left: -15%; width: 90%; height: 250px; background: #748a6d; transform: rotate(-8deg); }
-    .hill-two { right: -17%; bottom: -115px; width: 90%; height: 295px; background: #4a674e; transform: rotate(9deg); }
-    .workshop { position: absolute; z-index: 1; left: 50%; bottom: 60px; width: 230px; height: 190px; transform: translateX(-50%); }
-    .shed { position: absolute; left: 18px; bottom: 0; width: 194px; height: 137px; background: #e9e5d7; border: 5px solid #53634e; border-bottom: 0; }
-    .roof { position: absolute; left: 0; top: 0; width: 0; height: 0; border-left: 115px solid transparent; border-right: 115px solid transparent; border-bottom: 80px solid #394d3c; }
-    .door { position: absolute; left: 77px; bottom: 0; width: 47px; height: 84px; background: #849077; border: 4px solid #53634e; }
-    .window { position: absolute; right: 22px; bottom: 69px; width: 36px; height: 34px; background: #b7c8b3; border: 4px solid #53634e; }
-    .window::after { content: ''; position: absolute; left: 50%; top: 0; height: 100%; border-left: 3px solid #53634e; }
-    .art-label { position: absolute; z-index: 2; left: 24px; top: 24px; padding: 8px 12px; background: rgba(255,254,250,.8); color: var(--green); font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-    .art-caption { position: absolute; z-index: 2; right: 20px; bottom: 18px; color: rgba(255,255,255,.92); font: italic 1rem var(--serif); }
-    .intro { padding: 30px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .intro-inner { display: flex; align-items: center; justify-content: space-between; gap: 28px; }
-    .intro p { margin: 0; color: var(--muted); }
-    .intro strong { color: var(--ink); font: 500 1.25rem var(--serif); }
-    .intro-location { white-space: nowrap; color: var(--green); font-size: .88rem; font-weight: 700; }
-    section.content { padding: 100px 0; }
-    .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 36px; margin-bottom: 42px; }
-    .section-heading h2 { max-width: 590px; margin-bottom: 0; font: 500 clamp(2.4rem, 4vw, 3.8rem)/1.04 var(--serif); letter-spacing: -.045em; }
-    .section-heading > p { max-width: 330px; margin-bottom: 4px; color: var(--muted); }
-    .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-    .service-card { min-height: 270px; padding: 30px; border: 1px solid var(--line); background: var(--white); }
-    .service-number { display: flex; justify-content: space-between; align-items: center; margin-bottom: 34px; color: #859078; font: italic 1rem var(--serif); }
-    .service-icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: #edf0e3; color: var(--green); font-size: 1.15rem; }
-    .service-card h3 { margin-bottom: 10px; font: 500 1.75rem var(--serif); letter-spacing: -.025em; }
-    .service-card p { max-width: 450px; margin-bottom: 0; color: var(--muted); }
-    .promise { padding: 76px 0; background: var(--green); color: white; }
-    .promise-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 80px; align-items: start; }
-    .promise .eyebrow { color: var(--lime); }
-    .promise h2 { margin-bottom: 18px; font: 500 clamp(2.4rem, 4vw, 3.6rem)/1.05 var(--serif); letter-spacing: -.04em; }
-    .promise-intro { color: #d5ded2; }
-    .promise-list { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 32px; padding-top: 12px; }
-    .promise-item { border-top: 1px solid rgba(255,255,255,.25); padding-top: 14px; }
-    .promise-item strong { display: block; margin-bottom: 5px; color: var(--lime); font: 500 1.25rem var(--serif); }
-    .promise-item span { color: #d5ded2; font-size: .9rem; }
-    .contact { padding: 100px 0; }
-    .contact-box { display: grid; grid-template-columns: 1fr .8fr; gap: 60px; align-items: center; padding: 54px; background: #e9ecdf; }
-    .contact-box h2 { max-width: 520px; margin-bottom: 16px; font: 500 clamp(2.3rem, 4vw, 3.6rem)/1.04 var(--serif); letter-spacing: -.045em; }
-    .contact-box p { max-width: 470px; margin-bottom: 0; color: var(--muted); }
-    form { display: grid; gap: 12px; }
-    label { color: #485348; font-size: .82rem; font-weight: 700; }
-    input, textarea { width: 100%; margin-top: 5px; padding: 12px; border: 1px solid #cdd3c5; border-radius: 3px; background: var(--white); color: var(--ink); font: 1rem var(--sans); }
-    textarea { min-height: 96px; resize: vertical; }
-    form .button { justify-self: start; margin-top: 4px; }
-    .form-note { min-height: 1.3em; margin: 0; color: var(--muted); font-size: .78rem; }
-    footer { padding: 28px 0; border-top: 1px solid var(--line); }
-    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; color: var(--muted); font-size: .83rem; }
-    .footer-inner p { margin: 0; }
-    .footer-links { display: flex; gap: 20px; }
-    .footer-links a { text-decoration: none; }
-    .footer-links a:hover { text-decoration: underline; }
-    :focus-visible { outline: 3px solid #899a39; outline-offset: 3px; }
-    @media (max-width: 760px) {
-      .wrap { width: min(100% - 36px, 560px); }
-      .topbar { height: 72px; }
-      .menu-toggle { display: inline-block; }
-      nav { display: none; position: absolute; z-index: 5; top: 64px; left: 18px; right: 18px; padding: 18px; flex-direction: column; align-items: stretch; gap: 16px; background: var(--white); border: 1px solid var(--line); box-shadow: 0 12px 30px #20282018; }
-      nav.open { display: flex; }
-      nav a { padding: 5px; }
-      .nav-cta { text-align: center; }
-      .hero { padding: 48px 0 56px; }
-      .hero-grid { grid-template-columns: 1fr; gap: 36px; }
-      h1 { font-size: clamp(3.2rem, 14vw, 5rem); }
-      .hero-art { min-height: 330px; }
-      .workshop { transform: translateX(-50%) scale(.82); transform-origin: bottom center; }
-      .intro-inner { align-items: flex-start; flex-direction: column; gap: 12px; }
-      section.content, .contact { padding: 72px 0; }
-      .section-heading { display: block; margin-bottom: 28px; }
-      .section-heading > p { margin: 16px 0 0; }
-      .service-grid { grid-template-columns: 1fr; }
-      .service-card { min-height: 230px; }
-      .promise-grid { grid-template-columns: 1fr; gap: 30px; }
-      .promise-list { gap: 20px; }
-      .contact-box { grid-template-columns: 1fr; gap: 30px; padding: 30px 22px; }
-      .footer-inner { align-items: flex-start; flex-direction: column; }
-    }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
+    :root{--navy:#101b2c;--navy2:#182942;--orange:#f5a623;--paper:#f5f4f0;--white:#fff;--muted:#697586;--line:#e4e6e9;--max:1200px;--sans:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;background:var(--paper);color:var(--navy);font:16px/1.6 var(--sans)}a{color:inherit}.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}.top{position:sticky;z-index:10;top:0;background:rgba(255,255,255,.94);border-bottom:1px solid #e8e9eb;backdrop-filter:blur(14px)}.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:25px}.brand{display:flex;align-items:center;gap:11px;text-decoration:none}.brand img{width:53px;height:53px;object-fit:contain}.brandmark{display:grid;place-items:center;width:44px;height:44px;background:var(--navy);color:var(--orange);font-size:23px;font-weight:950;letter-spacing:-.08em;transform:skew(-5deg)}.brandname{font-size:1.04rem;font-weight:900;letter-spacing:.015em;line-height:1.05}.brandname small{display:block;margin-top:5px;font-size:.57rem;letter-spacing:.09em;color:#687386;font-weight:800;text-transform:uppercase}.links{display:flex;align-items:center;gap:31px}.links a{text-decoration:none;font-size:.9rem;font-weight:700;color:#354156}.links a:hover{color:#c27d08}.button{display:inline-flex;align-items:center;justify-content:center;gap:11px;padding:13px 20px;min-height:48px;background:var(--orange);color:var(--navy);border:0;border-radius:4px;text-decoration:none;font-weight:850;font-size:.92rem;transition:transform .18s,background .18s}.button:hover{background:#ffb735;transform:translateY(-2px)}.button.dark{background:var(--navy);color:white}.button.dark:hover{background:#243754}.menu{display:none;border:1px solid var(--line);border-radius:4px;background:white;padding:10px 13px;color:var(--navy);font-weight:800}
+    .hero{position:relative;overflow:hidden;background:var(--navy);color:white}.hero:after{position:absolute;content:"";width:560px;height:560px;border:1px solid #ffffff14;border-radius:50%;right:-150px;top:-210px;box-shadow:0 0 0 65px #ffffff08,0 0 0 130px #ffffff05;pointer-events:none}.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr .95fr;gap:45px;align-items:center;min-height:605px;padding-top:55px;padding-bottom:58px}.kicker{display:flex;align-items:center;gap:10px;margin:0 0 21px;color:var(--orange);font-size:.77rem;letter-spacing:.14em;text-transform:uppercase;font-weight:900}.kicker:before{content:"";width:27px;height:2px;background:var(--orange)}h1{max-width:660px;margin:0 0 22px;font-size:clamp(3.1rem,6.8vw,6.35rem);line-height:.98;letter-spacing:-.065em;font-weight:900}h1 span{color:var(--orange)}.hero-copy{max-width:550px;margin:0 0 29px;color:#c5cfdd;font-size:1.08rem}.hero-actions{display:flex;flex-wrap:wrap;gap:12px}.hero-actions .outline{border:1px solid #ffffff59;background:transparent;color:white}.hero-actions .outline:hover{background:#ffffff13}.trust{display:flex;gap:21px;flex-wrap:wrap;margin-top:29px;color:#cbd4df;font-size:.82rem}.trust span{display:flex;align-items:center;gap:8px}.check{display:grid;place-items:center;width:19px;height:19px;border-radius:50%;background:#ffffff15;color:var(--orange);font-size:.72rem;font-weight:900}
+    .hero-visual{position:relative;min-height:420px;isolation:isolate}.hero-photo{position:absolute;inset:0;overflow:hidden;border:1px solid #ffffff22;border-radius:8px;background:linear-gradient(130deg,#87909a,#d6d3c9 37%,#545d68 37%,#18253a 100%);box-shadow:0 24px 70px #0005}.street{position:absolute;inset:0;background:linear-gradient(0deg,#242a31 0 18%,transparent 18%),linear-gradient(90deg,#c7c9c4 0 20%,#e0d9c9 20% 39%,#c9ced0 39% 57%,transparent 57%);opacity:.8}.house-lines{position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 63px,#ffffff8a 64px 67px,transparent 68px 124px);mask-image:linear-gradient(#000 0 72%,transparent 100%);opacity:.7}.van{position:absolute;left:8%;right:4%;bottom:11%;height:53%;background:linear-gradient(164deg,#333c49 0 74%,#131e2d 74%);border-radius:55px 45px 17px 16px;box-shadow:0 28px 28px #1119;transform:skewY(-4deg)}.van:before{content:"";position:absolute;right:4%;top:10%;width:24%;height:51%;border-radius:12px 30px 3px 4px;background:linear-gradient(120deg,#c5d1d1,#697b83 65%,#263242);border:4px solid #202b38}.van:after{content:"";position:absolute;left:9%;bottom:21%;width:37%;height:21%;background:var(--orange);clip-path:polygon(0 0,100% 0,87% 100%,0 100%)}.wheel{position:absolute;z-index:2;bottom:2%;width:75px;height:75px;border-radius:50%;background:radial-gradient(circle,#9da5ab 0 18%,#333a42 19% 34%,#131922 35% 64%,#667079 65% 70%,#1a2028 71%);box-shadow:0 0 0 4px #0e1620}.wheel.one{left:23%}.wheel.two{right:20%}.van-copy{position:absolute;z-index:2;left:13%;bottom:37%;color:#fff;font-size:clamp(1rem,2vw,1.65rem);font-weight:950;line-height:1.08;letter-spacing:-.045em;transform:skewY(-4deg)}.van-copy b{display:block;margin-top:7px;color:var(--orange);font-size:.65em;letter-spacing:.01em}.van-logo{position:absolute;right:12%;bottom:21%;z-index:3;display:grid;place-items:center;width:105px;height:112px;border-radius:55% 45% 45% 55%;border:4px solid white;background:var(--orange);color:var(--navy);font-size:2rem;font-weight:1000;transform:rotate(8deg);box-shadow:0 5px 0 #1118}.visual-tag{position:absolute;z-index:4;top:20px;left:20px;background:white;color:var(--navy);padding:10px 14px;border-radius:3px;font-size:.72rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.visual-caption{position:absolute;z-index:4;right:16px;bottom:15px;color:white;font-size:.75rem;font-weight:700;text-shadow:0 1px 5px #000}
+    .quick{position:relative;z-index:2;margin-top:-1px;background:var(--orange);color:var(--navy)}.quick-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:19px 0}.quick strong{font-size:1.02rem}.quick span{font-size:.87rem;font-weight:750}.quick a{text-decoration:none;font-weight:900;white-space:nowrap}.quick a:hover{text-decoration:underline;text-underline-offset:4px}
+    section.pad{padding:93px 0}.section-top{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:38px}.section-top h2,.about h2,.contact h2{margin:0;font-size:clamp(2.4rem,4.6vw,4.2rem);line-height:1.02;letter-spacing:-.055em;font-weight:900}.section-top p{max-width:390px;margin:0;color:var(--muted)}.section-top .kicker{margin-bottom:13px}.services{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.service{position:relative;min-height:242px;padding:25px 23px;background:white;border:1px solid #e8e9e9;border-radius:6px;box-shadow:0 7px 22px #12203a08;transition:transform .2s,box-shadow .2s}.service:hover{transform:translateY(-5px);box-shadow:0 15px 32px #12203a13}.service-icon{display:grid;place-items:center;width:48px;height:48px;margin-bottom:25px;border-radius:5px;background:#fff2d8;color:#ad6d00}.service-icon svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.service h3{margin:0 0 9px;font-size:1.2rem;letter-spacing:-.025em}.service p{margin:0;color:var(--muted);font-size:.88rem}.service .num{position:absolute;top:27px;right:22px;color:#abb2bc;font-weight:900;font-size:.78rem}
+    .about{background:#e8ebef}.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:75px;align-items:center}.about h2{max-width:480px}.about-copy{max-width:540px;margin:20px 0 25px;color:#586477}.about-list{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;margin-top:28px}.about-list div{display:flex;align-items:center;gap:10px;font-weight:800;font-size:.9rem}.about-list i{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--orange);font-style:normal;font-size:.72rem}.about-card{position:relative;min-height:350px;padding:34px;background:var(--navy);color:white;border-radius:7px;overflow:hidden}.about-card:after{content:"R";position:absolute;right:-8px;bottom:-105px;color:#ffffff0b;font-size:22rem;line-height:1;font-weight:1000}.about-card small{position:relative;z-index:1;color:var(--orange);font-weight:900;letter-spacing:.13em;text-transform:uppercase}.about-card blockquote{position:relative;z-index:1;max-width:400px;margin:50px 0 20px;font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.18;letter-spacing:-.04em;font-weight:850}.about-card p{position:relative;z-index:1;color:#c4ccda;font-size:.9rem}
+    .contact{background:var(--navy);color:white}.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:75px;align-items:start}.contact h2{max-width:500px}.contact-copy{max-width:430px;color:#bac5d4;margin:18px 0 30px}.contact-details{display:grid;gap:14px}.contact-details a{display:flex;gap:12px;align-items:center;color:#fff;text-decoration:none;font-weight:750}.contact-details a:hover{color:var(--orange)}.contact-details .mini{display:grid;place-items:center;width:37px;height:37px;border:1px solid #ffffff2a;border-radius:4px;color:var(--orange)}.contact form{display:grid;gap:14px;padding:27px;background:white;color:var(--navy);border-radius:6px}.row{display:grid;grid-template-columns:1fr 1fr;gap:13px}label{font-size:.82rem;font-weight:800}input,textarea{display:block;width:100%;margin-top:6px;padding:12px;border:1px solid #dfe3e8;border-radius:3px;background:#fbfbfa;color:var(--navy);font:inherit}textarea{min-height:110px;resize:vertical}input:focus,textarea:focus{outline:2px solid #f5a62380;border-color:#dc9419}form .button{justify-self:start}.form-note{min-height:1.2em;margin:0;color:var(--muted);font-size:.78rem}.foot{padding:24px 0;background:#0b1422;color:#aab5c5}.foot-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:.78rem}.foot p{margin:0}.foot a{color:var(--orange);text-decoration:none}.foot a:hover{text-decoration:underline}.legal{display:flex;gap:18px}
+    :focus-visible{outline:3px solid #f5a623;outline-offset:3px}@media(max-width:900px){.hero-grid{grid-template-columns:1fr 1fr;gap:25px;min-height:560px}.services{grid-template-columns:repeat(2,1fr)}.about-grid,.contact-grid{gap:38px}.links{gap:17px}.links a{font-size:.84rem}.links .button{padding:11px 14px}}@media(max-width:680px){.wrap{width:calc(100% - 36px)}.nav{height:68px}.menu{display:block}.links{display:none;position:absolute;top:67px;left:0;right:0;padding:19px 22px 22px;background:white;border-bottom:1px solid var(--line);box-shadow:0 15px 20px #1112;align-items:stretch;flex-direction:column;gap:16px}.links.open{display:flex}.links a{font-size:.95rem}.links .button{text-align:center}.hero-grid{grid-template-columns:1fr;padding-top:51px;padding-bottom:36px}.hero-visual{min-height:310px}.hero:after{right:-320px}.quick-inner{align-items:flex-start;flex-direction:column;gap:5px;padding:16px 0}.quick-inner a{margin-top:5px}.pad{padding:68px 0!important}.section-top{display:block}.section-top p{margin-top:17px}.services{grid-template-columns:1fr}.service{min-height:0;padding:23px}.service-icon{margin-bottom:16px}.about-grid,.contact-grid{grid-template-columns:1fr;gap:29px}.about-card{min-height:290px}.about-card blockquote{margin-top:37px}.row{grid-template-columns:1fr}.contact form{padding:21px}.foot-inner{align-items:flex-start;flex-direction:column}.brand img{width:47px;height:47px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
   </style>
 </head>
 <body>
-  <header class="wrap topbar">
-    <a class="brand" href="#start" aria-label="Revierhobel – zur Startseite"><span class="brand-mark" aria-hidden="true">R</span><span>Revierhobel</span></a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation">Menü</button>
-    <nav id="navigation" aria-label="Hauptnavigation">
-      <a href="#leistungen">Leistungen</a>
-      <a href="#ueber-uns">Über uns</a>
-      <a class="nav-cta" href="#kontakt">Projekt besprechen <span aria-hidden="true">↗</span></a>
-    </nav>
+  <header class="top">
+    <div class="wrap nav">
+      <a class="brand" href="#start" aria-label="Revierhobel – Startseite"><span class="brandmark" aria-hidden="true">R</span><span class="brandname">REVIERHOBEL<small>Hausmeister- &amp; Montageservice</small></span></a>
+      <button class="menu" type="button" aria-expanded="false" aria-controls="nav-links">Menü</button>
+      <nav class="links" id="nav-links" aria-label="Hauptnavigation"><a href="#leistungen">Leistungen</a><a href="#ueber-uns">Über uns</a><a href="#kontakt">Kontakt</a><a class="button" href="tel:+491622609829">Jetzt anrufen <span aria-hidden="true">↗</span></a></nav>
+    </div>
   </header>
-
   <main>
-    <section class="hero" id="start">
-      <div class="wrap hero-grid">
-        <div>
-          <p class="eyebrow">Handwerk aus dem Revier</p>
-          <h1>Wir kümmern uns.<br><em>Mit Hand &amp; Herz.</em></h1>
-          <p class="hero-copy">Hausmeisterservice und Montageservice aus Duisburg – praktische Unterstützung rund um Haus, Wohnung und die Dinge, die einfach erledigt werden müssen.</p>
-          <a class="button" href="#kontakt">Lassen Sie uns sprechen <span class="arrow" aria-hidden="true">→</span></a>
-          <div class="hero-note"><span aria-hidden="true">✓</span> Persönlich, nah und zuverlässig</div>
-        </div>
-        <div class="hero-art" role="img" aria-label="Illustration eines kleinen Hauses in einer grünen Landschaft">
-          <span class="art-label">Duisburg &amp; Umgebung</span><span class="sun" aria-hidden="true"></span>
-          <div class="hill hill-one" aria-hidden="true"></div><div class="hill hill-two" aria-hidden="true"></div>
-          <div class="workshop" aria-hidden="true"><div class="roof"></div><div class="shed"></div><div class="door"></div><div class="window"></div></div>
-          <span class="art-caption">Gutes Handwerk. Gutes Gefühl.</span>
-        </div>
+    <section class="hero" id="start"><div class="wrap hero-grid">
+      <div><p class="kicker">Handwerk aus dem Revier · Duisburg</p><h1>Nix fürs Büro.<br><span>Ran ans Werk.</span></h1><p class="hero-copy">Mit Leidenschaft am Bau – und mit viel Liebe zum Detail. Revierhobel ist Ihr zuverlässiger Partner für Hausmeisterservice und Montagen rund um Ihr Zuhause.</p>
+        <div class="hero-actions"><a class="button" href="#kontakt">Projekt besprechen <span aria-hidden="true">→</span></a><a class="button outline" href="tel:+491622609829">0162 2609829</a></div>
+        <div class="trust"><span><i class="check">✓</i> Persönlicher Service</span><span><i class="check">✓</i> Saubere Montage</span><span><i class="check">✓</i> Aus Duisburg</span></div>
       </div>
-    </section>
-
-    <div class="intro"><div class="wrap intro-inner"><p><strong>Ein Ansprechpartner für viele Aufgaben.</strong><br>Damit Ihr Zuhause und Ihre Immobilie in Schuss bleiben.</p><span class="intro-location">Verwurzelt im Ruhrgebiet&nbsp; · &nbsp;Zuhause in Duisburg</span></div></div>
-
-    <section class="content" id="leistungen">
-      <div class="wrap">
-        <div class="section-heading"><div><p class="eyebrow">Was wir für Sie tun</p><h2>Praktische Hilfe.<br>Sauber erledigt.</h2></div><p>Ob regelmäßige Unterstützung oder ein konkretes Vorhaben: Gemeinsam finden wir die passende Lösung für Ihr Projekt.</p></div>
-        <div class="service-grid">
-          <article class="service-card"><div class="service-number"><span>01 / Haus &amp; Hof</span><span class="service-icon" aria-hidden="true">⌂</span></div><h3>Hausmeisterservice</h3><p>Unterstützung bei der Betreuung und Pflege Ihrer Immobilie – von Kontrollgängen und kleinen Handgriffen bis zur Pflege der Außenbereiche.</p></article>
-          <article class="service-card"><div class="service-number"><span>02 / Aufbau &amp; Montage</span><span class="service-icon" aria-hidden="true">⌁</span></div><h3>Montageservice</h3><p>Möbel aufbauen, Einrichtungsgegenstände montieren oder Dinge sicher anbringen: Wir packen mit an und sorgen für einen ordentlichen Abschluss.</p></article>
-        </div>
+      <div class="hero-visual" role="img" aria-label="Grafische Illustration eines dunklen Revierhobel-Servicewagens in einer Duisburger Straße"><div class="hero-photo"><div class="street"></div><div class="house-lines"></div><div class="van"></div><div class="van-copy">REVIERHOBEL<b>Hausmeister- &amp; Montageservice</b></div><div class="van-logo" aria-hidden="true">RH</div><div class="wheel one"></div><div class="wheel two"></div></div><span class="visual-tag">Duisburg &amp; Umgebung</span><span class="visual-caption">Mit Leidenschaft am Bau</span></div>
+    </div></section>
+    <div class="quick"><div class="wrap quick-inner"><strong>Fenster · Türen · Markisen · Vordächer</strong><span>Montagen mit Anspruch – vom ersten Gespräch bis zum letzten Handgriff.</span><a href="#leistungen">Unsere Leistungen <span aria-hidden="true">→</span></a></div></div>
+    <section class="pad" id="leistungen"><div class="wrap"><div class="section-top"><div><p class="kicker">Was wir für Sie tun</p><h2>Gute Arbeit.<br>Bis ins Detail.</h2></div><p>Sie haben ein Projekt oder brauchen Unterstützung an Ihrer Immobilie? Wir hören zu, beraten persönlich und packen an.</p></div>
+      <div class="services">
+        <article class="service"><span class="num">01</span><span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h6M9 11h6M9 15h3"/></svg></span><h3>Fenster</h3><p>Fachgerechte Montage und passgenauer Einbau – sauber ausgeführt und ordentlich hinterlassen.</p></article>
+        <article class="service"><span class="num">02</span><span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><circle cx="15" cy="12" r=".8"/></svg></span><h3>Türen</h3><p>Montage von Türen mit Blick auf Funktion, Sitz und ein stimmiges Ergebnis.</p></article>
+        <article class="service"><span class="num">03</span><span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h18l-3-5H6L3 9Z"/><path d="M5 9v10m14-10v10M5 19h14M8 12v4m4-4v4m4-4v4"/></svg></span><h3>Markisen</h3><p>Montage und Ausrichtung Ihrer Markise für entspannten Schatten auf Balkon und Terrasse.</p></article>
+        <article class="service"><span class="num">04</span><span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7M5 10v10h14V10M8 14h8M8 17h8"/></svg></span><h3>Vordächer</h3><p>Vordächer fachgerecht anbringen – praktisch, sicher und passend zum Eingangsbereich.</p></article>
       </div>
-    </section>
-
-    <section class="promise" id="ueber-uns">
-      <div class="wrap promise-grid">
-        <div><p class="eyebrow">Revierhobel – aus der Region</p><h2>Handwerk, auf das man sich verlassen kann.</h2><p class="promise-intro">Wir mögen es unkompliziert: Wir hören zu, sprechen klar ab, was zu tun ist, und kümmern uns um die vereinbarten Arbeiten.</p></div>
-        <div class="promise-list">
-          <div class="promise-item"><strong>Persönlich</strong><span>Direkter Kontakt und ein offenes Ohr für Ihr Anliegen.</span></div>
-          <div class="promise-item"><strong>Verlässlich</strong><span>Absprachen, die zählen – und ein sauberer Abschluss.</span></div>
-          <div class="promise-item"><strong>Vielseitig</strong><span>Hausmeisterservice und Montage aus einer Hand.</span></div>
-          <div class="promise-item"><strong>Aus dem Revier</strong><span>Lokal verwurzelt und für Sie in Duisburg da.</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="kontakt">
-      <div class="wrap contact-box">
-        <div><p class="eyebrow">Der erste Schritt</p><h2>Was steht bei Ihnen an?</h2><p>Schildern Sie uns kurz Ihr Vorhaben. Wir melden uns, um die nächsten Schritte und den passenden Umfang mit Ihnen abzustimmen.</p></div>
-        <form id="contact-form">
-          <label for="name">Ihr Name<input id="name" name="name" autocomplete="name" required></label>
-          <label for="email">Ihre E-Mail-Adresse<input id="email" name="email" type="email" autocomplete="email" required></label>
-          <label for="message">Worum geht es?<textarea id="message" name="message" required></textarea></label>
-          <button class="button" type="submit">Anfrage vorbereiten <span aria-hidden="true">→</span></button>
-          <p class="form-note" id="form-note" aria-live="polite">Das Formular öffnet Ihr E-Mail-Programm.</p>
-        </form>
-      </div>
-    </section>
+    </div></section>
+    <section class="pad about" id="ueber-uns"><div class="wrap about-grid"><div><p class="kicker">Persönlich. Zuverlässig. Revier.</p><h2>Kein halber Scheiß. Sondern saubere Arbeit.</h2><p class="about-copy">Revierhobel steht für ehrliches Handwerk aus Duisburg. Inhaber Julian Wahlen kümmert sich persönlich um Ihr Vorhaben – mit klaren Absprachen, einem Auge fürs Detail und dem Anspruch, die Arbeit ordentlich zu Ende zu bringen.</p><a class="button dark" href="#kontakt">Lernen wir uns kennen <span aria-hidden="true">→</span></a><div class="about-list"><div><i>✓</i> Direkter Ansprechpartner</div><div><i>✓</i> Klare Absprachen</div><div><i>✓</i> Sorgfältige Ausführung</div><div><i>✓</i> Lokal aus Duisburg</div></div></div><div class="about-card"><small>Revierhobel · Duisburg</small><blockquote>„Aus Leidenschaft am Bau – wir montieren ganz genau.“</blockquote><p>Ihr Hausmeister- &amp; Montageservice aus dem Revier.</p></div></div></section>
+    <section class="pad contact" id="kontakt"><div class="wrap contact-grid"><div><p class="kicker">Lassen Sie uns reden</p><h2>Was können wir für Sie anpacken?</h2><p class="contact-copy">Schreiben Sie uns ein paar Zeilen oder rufen Sie direkt an. Wir besprechen Ihr Vorhaben persönlich und unkompliziert.</p><div class="contact-details"><a href="tel:+491622609829"><span class="mini">☎</span>0162 2609829</a><a href="mailto:julian@revierhobel.de"><span class="mini">@</span>julian@revierhobel.de</a><a href="https://maps.google.com/?q=Skt.+Virher+Str.+26,+47137+Duisburg" target="_blank" rel="noopener noreferrer"><span class="mini">⌖</span>Skt. Virher Str. 26, 47137 Duisburg</a></div></div>
+      <form id="contact-form"><div class="row"><label for="name">Ihr Name<input id="name" name="name" autocomplete="name" required></label><label for="email">Ihre E-Mail<input id="email" name="email" type="email" autocomplete="email" required></label></div><label for="message">Worum geht es?<textarea id="message" name="message" required></textarea></label><button class="button" type="submit">Anfrage per E-Mail senden <span aria-hidden="true">→</span></button><p class="form-note" id="form-note" aria-live="polite">Wir freuen uns auf Ihr Projekt.</p></form>
+    </div></section>
   </main>
-
-  <footer><div class="wrap footer-inner"><a class="brand" href="#start"><span class="brand-mark" aria-hidden="true">R</span><span>Revierhobel</span></a><p>© <span id="year"></span> Revierhobel · Hausmeisterservice &amp; Montageservice · Duisburg</p><div class="footer-links"><a href="mailto:">Kontakt</a><a href="#impressum" id="imprint-link">Impressum</a></div></div></footer>
-
+  <footer class="foot"><div class="wrap foot-inner"><p>© <span id="year"></span> Revierhobel · Hausmeister- &amp; Montageservice · Duisburg</p><div class="legal"><a href="mailto:julian@revierhobel.de?subject=Impressum">Impressum</a><a href="mailto:julian@revierhobel.de?subject=Datenschutz">Datenschutz</a><a href="#start">Nach oben ↑</a></div></div></footer>
   <script>
-    // Vor Veröffentlichung bitte Ihre Kontakt-E-Mail-Adresse hier eintragen.
-    const contactEmail = '';
-    const toggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('#navigation');
-    toggle.addEventListener('click', () => {
-      const isOpen = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(isOpen));
-    });
-    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-      nav.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-    }));
-    document.querySelector('#year').textContent = new Date().getFullYear();
-    document.querySelector('#contact-form').addEventListener('submit', event => {
-      event.preventDefault();
-      const note = document.querySelector('#form-note');
-      if (!contactEmail) {
-        note.textContent = 'Bitte tragen Sie vor der Veröffentlichung Ihre E-Mail-Adresse im HTML-Code ein (contactEmail).';
-        return;
-      }
-      const data = new FormData(event.currentTarget);
-      const subject = encodeURIComponent('Anfrage über die Revierhobel-Homepage');
-      const body = encodeURIComponent(`Name: ${data.get('name')}\nE-Mail: ${data.get('email')}\n\n${data.get('message')}`);
-      window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
-    });
-    document.querySelector('#imprint-link').addEventListener('click', event => {
-      event.preventDefault();
-      document.querySelector('#form-note').textContent = 'Bitte ergänzen Sie vor Veröffentlichung die gesetzlich erforderlichen Angaben im Impressum.';
-      document.querySelector('#kontakt').scrollIntoView({ behavior: 'smooth' });
-    });
+    const toggle=document.querySelector('.menu'),nav=document.querySelector('#nav-links');
+    toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));});
+    nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');}));
+    document.querySelector('#year').textContent=new Date().getFullYear();
+    document.querySelector('#contact-form').addEventListener('submit',e=>{e.preventDefault();const d=new FormData(e.currentTarget);const subject=encodeURIComponent('Anfrage über die Revierhobel-Homepage');const body=encodeURIComponent(`Name: ${d.get('name')}\nE-Mail: ${d.get('email')}\n\n${d.get('message')}`);window.location.href=`mailto:julian@revierhobel.de?subject=${subject}&body=${body}`;});
   </script>
 </body>
 </html>
